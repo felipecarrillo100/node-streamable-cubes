@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",            // or ES2019 if you prefer
+    "module": "commonjs",          // works with Node.js require/import
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true,                // enables strict type checking
+    "esModuleInterop": true,       // allows default imports from commonjs
+    "skipLibCheck": true           // speeds up compilation
+  },
+  "include": ["src/**/*.ts"]
+}

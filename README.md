@@ -24,7 +24,7 @@ This project generates a large grid dataset split into manageable chunks, encode
 
 - `g-r{row}c{col}.json.gz` — Each chunk file:
   - `row` and `col` are zero-based chunk indices.
-  - Stored as BSON, then gzipped.
+  - Stored as JSON, then gzipped.
   
 - `grid-metadata.json` — Index Metadata file describing the entire dataset.
 
@@ -87,7 +87,7 @@ Each chunk contains the following JSON structure before compression:
 1. Use the metadata file    to:
    - Understand the overall grid extent and size.
    - Locate chunk files by their row and column indices.
-2. Load each chunk file, decompress, and deserialize BSON to access the cell data.
+2. Load each chunk file, decompress, and deserialize JSON to access the cell data.
 3. The cell data can be used for spatial analysis, rendering, or other applications.
 
 ---
@@ -105,7 +105,7 @@ Each chunk contains the following JSON structure before compression:
 - Chunk sizes are configurable (default 64x64 cells), I have experimented with 100x100, similar results.
 - Cells contain minimal fields and short names for efficiency.
 - Metadata lookup facilitates direct access to any chunk.
-- File names follow the pattern: `g-r{row}c{col}.bson.gz`.
+- File names follow the pattern: `g-r{row}c{col}.json.gz`.
 
 ---
 
